@@ -1,0 +1,15 @@
+<h1>Your todo list!</h1>
+
+<ul>
+	{{#each data}}
+	<li><a href="/{{this.id}}">{{this.todo}}</a></li>
+	{{/each}}
+</ul>
+
+<form action="/" method="POST">
+	<input type = "text" placeholder="TODO" name = "list"><br>
+	<input type = "text" placeholder = "description (optional)" name="description"><br>
+	<input type= "submit"> <!-- get a get request on sumbit by default -->
+</form>
+
+
