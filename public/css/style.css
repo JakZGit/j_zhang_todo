@@ -1,11 +1,11 @@
 #backimg{
-	background: url(http://wallpapercave.com/wp/78ompu9.jpg)no-repeat center center fixed; 
+	background: url(http://gadgetspro.net/wp-content/uploads/2016/02/bigstock-desktop-mix-on-a.jpg)no-repeat center center fixed; 
     -webkit-background-size: cover;
  	-moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-       opacity:0.8;
+       /*opacity:0.8;*/
 /*    background-color:#ccc;*/
     position:fixed;
     width:100%;
