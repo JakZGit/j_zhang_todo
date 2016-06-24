@@ -58,10 +58,25 @@ app.post('/',function(req,res,next){
 	});
 });
 
+app.post('/register',function(req,res,next){
+	var newUser = req.body.username;
+	var newPass = req.body.password;
+	db.none('insert into users (username, password)'+
+		' values (${username}, ${password})',
+		req.body)
+	.then(function(){
+		res.redirect('/index/'+newUser);
+	})
+	.catch(function(err){
+		// return next(err);
+	});
+})
+
 
 app.get('/index/:usernameref',function(req,res,next){
 	if(checked == true){
 	var userId = req.params.usernameref;
+
 	db.any('SELECT * FROM list WHERE usernameref =$1',userId)
 	.then(function(data){
 		res.render('index',{ data: data, userId: userId });
@@ -75,12 +90,11 @@ app.get('/index/:usernameref',function(req,res,next){
 
 app.post('/index/:usernameref',function(req,res,next){
 	var user = req.params.usernameref;
-	console.log(user);
 	db.none('insert into list (usernameref, todo ,description)'+
-		'values('+user+', ${list}, ${description})',
-		req.body)
+		' values (${user}, ${list}, ${description})',
+		{user:user, list:req.body.list, description:req.body.description})
 	.then(function(){
-		res.redirect('/index/'+userId);
+		res.redirect('/index/'+user);
 	})
 	.catch(function(err){
 		return next(err);
@@ -88,11 +102,12 @@ app.post('/index/:usernameref',function(req,res,next){
 });
 
 
-app.get('/index/:userId/delete', function(req,res,next){
+app.get('/index/:userId/:usernameref/delete', function(req,res,next){
 	var userId = req.params.userId;
-	db.none('DELETE FROM list WHERE usernameref = $1', userId)
+		var username = req.params.usernameref;
+	db.none('DELETE FROM list WHERE todo = $1', userId)
    .then(function() {
-   		res.redirect('/index/'+userId);	
+   		res.redirect('/index/'+username);	
 	 })
 	 .catch(function(err){
 	 	return next(err);

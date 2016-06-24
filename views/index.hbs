@@ -1,13 +1,10 @@
-<!-- <h1>Welcome {{userId}}! </h1>
-<p>Heres your todo list!</p> -->
-
 <div id = "container2">
 <h1>Welcome {{userId}}! </h1>
 <p>Heres your todo list!</p>
 <ul>
 	{{#each data}}
 	<a href="/{{this.id}}">{{this.todo}}</a>
-	<a href = "/index/{{this.usernameref}}/delete"> |DELETE|</a>
+	<a href = "/index/{{this.todo}}/{{this.usernameref}}/delete"> |DELETE|</a><br>
 	
 	{{/each}}
 </ul>
