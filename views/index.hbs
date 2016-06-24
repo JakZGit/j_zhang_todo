@@ -1,18 +1,35 @@
 <div id = "container2">
+<div id="center">
 <h1>Welcome {{userId}}! </h1>
+
+
+<div id = "css">
+  <form action="/index/{{userId}}" method="POST">
+  
+    <input type="text" id="fname" placeholder="TODO" name="list">
+    <input type="text" id="lname" placeholder="description (optional)" name="description">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 <p>Heres your todo list!</p>
 <ul>
 	{{#each data}}
 	<a href="/{{this.id}}">{{this.todo}}</a>
-	<a href = "/index/{{this.todo}}/{{this.usernameref}}/delete"> |DELETE|</a><br>
+	<a href = "/index/{{this.todo}}/{{this.usernameref}}/delete"> [Delete]</a><br>
 	
 	{{/each}}
 </ul>
-<form action="/index/{{userId}}" method="POST">
+
+
+
+<!-- <form action="/index/{{userId}}" method="POST">
 	<input type = "text" placeholder="TODO" name = "list"><br>
 	<input type = "text" placeholder = "description (optional)" name="description"><br>
-	<input type= "submit"> <!-- get a get request on sumbit by default -->
-</form>
+	<input type= "submit"> 
+</form> -->
+</div>
 </div>
 
 

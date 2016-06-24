@@ -1,5 +1,5 @@
 #backimg{
-	background: url(http://www.tuvous.com/wp-content/uploads/to-do-list.png)no-repeat center center fixed; 
+	background: url(http://wallpapercave.com/wp/78ompu9.jpg)no-repeat center center fixed; 
     -webkit-background-size: cover;
  	-moz-background-size: cover;
     -o-background-size: cover;
@@ -17,13 +17,13 @@
 
 #container{
 	text-align: center;
-	margin-top: 20%;
-    /*position: absolute;
+	/*margin-top: 20%;/*
+  */  /*position: absolute;
 */}
 
 #container2{
 
-	background: url(http://www.designmom.com/wp-content/uploads/2012/11/ToDoList.png)no-repeat center center fixed; 
+	background: url(https://erinwritesnow.files.wordpress.com/2016/04/preview20notebook20vs20pencil.jpg)no-repeat center center fixed; 
     -webkit-background-size: cover;
  	-moz-background-size: cover;
     -o-background-size: cover;
@@ -38,6 +38,10 @@
     left:0px;
     z-index:1000;
 
+}
+
+#center{
+    text-align: center;
 }
 
 #container3{
@@ -59,3 +63,80 @@
     z-index:1000;
 
 }
+
+/**/
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#css {
+    border-radius: 5px;
+    width: 50%;
+    margin left: 10%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 0 auto;
+}
+#container{
+}
+#backimg{
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
