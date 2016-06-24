@@ -1,22 +1,25 @@
-<h1>Your todo list!</h1>
+<!-- <h1>Welcome {{userId}}! </h1>
+<p>Heres your todo list!</p> -->
 
-<!-- <ul>
+<div id = "container2">
+<h1>Welcome {{userId}}! </h1>
+<p>Heres your todo list!</p>
+<ul>
 	{{#each data}}
-	<li><input type="checkbox"><a href="/{{this.id}}">{{this.todo}}</a></li>
+	<a href="/{{this.id}}">{{this.todo}}</a>
+	<a href = "/index/{{this.usernameref}}/delete"> |DELETE|</a>
+	
 	{{/each}}
-</ul> -->
-
-
-
-	{{#each data}}
-	<input type="checkbox"><a href="/{{this.id}}">{{this.todo}}</a><br>
-	{{/each}}
-
-
-<form action="/" method="POST">
+</ul>
+<form action="/index/{{userId}}" method="POST">
 	<input type = "text" placeholder="TODO" name = "list"><br>
 	<input type = "text" placeholder = "description (optional)" name="description"><br>
 	<input type= "submit"> <!-- get a get request on sumbit by default -->
 </form>
+</div>
+
+
+
+
 
 
