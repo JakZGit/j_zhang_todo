@@ -1,0 +1,1 @@
+ToDo is a simple full stack web application that allows users to login/create user and then proceed to create task(s).

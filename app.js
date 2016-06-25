@@ -58,20 +58,6 @@ app.post('/',function(req,res,next){
 	});
 });
 
-app.post('/register',function(req,res,next){
-	var newUser = req.body.username;
-	var newPass = req.body.password;
-	db.none('insert into users (username, password)'+
-		' values (${username}, ${password})',
-		req.body)
-	.then(function(){
-		res.redirect('/index/'+newUser);
-	})
-	.catch(function(err){
-		// return next(err);
-	});
-})
-
 
 app.get('/index/:usernameref',function(req,res,next){
 	if(checked == true){
@@ -86,6 +72,22 @@ app.get('/index/:usernameref',function(req,res,next){
 	});
 	}
 });
+
+app.post('/register',function(req,res,next){
+	var newUser = req.body.username;
+	var newPass = req.body.password;
+	db.none('insert into users (username, password)'+
+		' values (${username}, ${password})',
+		req.body)
+	.then(function(){
+		res.redirect('/');
+	})
+	.catch(function(err){
+		// return next(err);
+	});
+})
+
+
 
 
 app.post('/index/:usernameref',function(req,res,next){
